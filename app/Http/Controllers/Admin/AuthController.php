@@ -52,6 +52,7 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
+            'contact' => 'required',
             'trems' => 'accepted',
             'password' => [
                 'required',
@@ -80,6 +81,7 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'contact' => $request->contact,
             'password' => Hash::make($request->password),
         ])->assignRole('admin');
 
