@@ -69,7 +69,7 @@
       <!-- Logo -->
       <a href="index.html" class="app-brand auth-cover-brand">
         <span class="app-brand-logo demo">
-          <img src="{{ asset('admin/assets/img/logo/pst-logo.png') }}" width="50" height="50" alt="">
+          <img src="{{ asset('admin/assets/img/logo/ramah.jpg') }}" width="50" height="50" alt="">
           {{-- <svg width="32" height="22" viewBox="0 0 32 22" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
               fill-rule="evenodd"
@@ -95,7 +95,7 @@
               fill="#7367F0" />
           </svg> --}}
         </span>
-        <span class="app-brand-text demo text-heading fw-bold">PratamaTech</span>
+        <span class="app-brand-text demo text-heading fw-bold">RamahTech</span>
       </a>
       <!-- /Logo -->
       <div class="authentication-inner row m-0">
