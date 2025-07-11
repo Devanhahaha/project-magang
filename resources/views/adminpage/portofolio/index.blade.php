@@ -79,9 +79,25 @@
                         <div class="card-body p-3">
                             <span class="badge bg-primary mb-2">{{ $portofolio->category }}</span>
                             <h5 class="fw-semibold mb-2">{{ $portofolio->title }}</h5>
-                            <p class="text-muted small" style="max-height: 60px; overflow: hidden;">
-                                {{ $portofolio->description }}
+                            <p data-bs-toggle="modal" data-bs-target="#descModal{{ $portofolio->id }}"
+                                style="cursor: pointer;">
+                                {{ \Illuminate\Support\Str::limit($portofolio->description, 20) }}
                             </p>
+                            <div class="modal fade" id="descModal{{ $portofolio->id }}" tabindex="-1"
+                                aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Full Description</h5>
+                                            <button type="button" class="btn-close"
+                                                data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {{ $portofolio->description }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="mt-2">
                                 <small class="text-secondary">📅 {{ $portofolio->tanggal }}</small>
                             </div>
