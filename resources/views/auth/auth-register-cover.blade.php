@@ -143,7 +143,7 @@
               </div>
               <div class="mb-6">
                 <label for="contact" class="form-label">Contact</label>
-                <input type="number" class="form-control" id="contact" name="contact" placeholder="Enter your contact" />
+                <input type="text" class="form-control" id="contact" name="contact" placeholder="Enter your contact" />
               </div>
               <div class="mb-6 form-password-toggle">
                 <label class="form-label" for="password">Password</label>
