@@ -39,13 +39,11 @@
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body flex-grow-1">
-                                        <!-- Tambahkan input hidden di form update -->
                                         <form action="{{ route('home.update', $homes->id) }}" method="POST"
                                             enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
                                             <input type="hidden" name="id" value="{{ $homes->id }}">
-                                            <!-- Tambahan penting -->
 
                                             <div class="mb-3">
                                                 <label class="form-label" for="banner">Banner</label>

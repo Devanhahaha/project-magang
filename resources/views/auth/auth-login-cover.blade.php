@@ -82,7 +82,7 @@
             </div>
             <div class="d-flex col-12 col-lg-4 align-items-center authentication-bg p-sm-12 p-6">
                 <div class="w-px-400 mx-auto mt-12 pt-5">
-                    <h4 class="mb-1">Welcome to PratamaTech! 👋</h4>
+                    <h4 class="mb-1">Welcome to RamahTech! 👋</h4>
                     <p class="mb-6">Please sign-in to your account and start the adventure</p>
 
                     <form id="formAuthentication" class="mb-6" action="{{ route('login.authentication') }}"
@@ -143,28 +143,29 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-    @if (session('error'))
-        <script>
-            Swal.fire({
-                icon: 'error',
-                title: 'Gagal!',
-                text: '{{ session('error') }}',
-                showConfirmButton: false,
-                timer: 2000
-            });
-        </script>
-    @endif
+    @if (session('status') == 'error')
     <script>
-         @if (session('success'))
-            Swal.fire({
-                icon: 'success',
-                title: 'Berhasil!',
-                text: '{{ session('success') }}',
-                showConfirmButton: false,
-                timer: 2000
-            });
-        @endif
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            text: '{{ session('message') }}',
+            showConfirmButton: false,
+            timer: 2000
+        });
     </script>
+@endif
+
+@if (session('status') == 'success')
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Berhasil!',
+            text: '{{ session('message') }}',
+            showConfirmButton: false,
+            timer: 2000
+        });
+    </script>
+@endif
 </body>
 
 </html>

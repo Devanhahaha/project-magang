@@ -25,10 +25,10 @@ class AuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json([
+            return back()->with([
                 'status' => 'error',
                 'message' => 'email dan password tidak valid!'
-            ], 422);
+            ])->withInput();
         }
 
         $user = User::where('email', $request->email)->first();
