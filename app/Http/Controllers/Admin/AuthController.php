@@ -44,7 +44,10 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('login')->with('success', 'Logout Successfully!');
+        return redirect()->route('login')->with([
+            'status' => 'success',
+            'message' => 'Logout Successfully!'
+        ]);
     }
 
     public function register(Request $request)
@@ -73,10 +76,10 @@ class AuthController extends Controller
             return redirect()->back()
                 ->with([
                     'status' => 'error',
-                    'message' => $validator->errors()->first() 
+                    'message' => $validator->errors()->first()
                 ])
                 ->withInput();
-        }        
+        }
 
         $user = User::create([
             'name' => $request->name,
