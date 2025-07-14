@@ -45,6 +45,7 @@ class PortofolioController extends Controller
             'title' => 'required|string|min:5|max:255',
             'description' => 'required|string|min:10|max:1000',
             'tanggal' => 'required|date_format:Y-m-d',
+            'techstack' => 'required|string|min:10|max:1000',
         ]);
 
         try {
@@ -56,6 +57,7 @@ class PortofolioController extends Controller
                 'title'  => $request->title,
                 'description'  => $request->description,
                 'tanggal'  => $request->tanggal,
+                'techstack' => $request->techstack,
             ]);
 
             return redirect()->route('portofolio.index')->with('success', 'Portofolio Content created successfully!');
@@ -93,6 +95,7 @@ class PortofolioController extends Controller
             'title' => 'required|string|min:5|max:255',
             'description' => 'required|string|min:10|max:1000',
             'tanggal' => 'required|date_format:Y-m-d',
+            'techstack' => 'required|string|min:10|max:1000',
         ]);
 
         try {
@@ -110,6 +113,7 @@ class PortofolioController extends Controller
             $portofolio->title = $request->title;
             $portofolio->description = $request->description;
             $portofolio->tanggal = $request->tanggal;
+            $portofolio->techstack = $request->techstack;
 
             $portofolio->save();
 

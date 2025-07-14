@@ -40,6 +40,10 @@
                         <label class="form-label" for="tanggal">tanggal</label>
                         <input type="date" id="tanggal" name="tanggal" class="form-control" required />
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="techstack">TechStack</label>
+                        <input type="text" id="techstack" name="techstack" class="form-control" required />
+                    </div>
                     <div class="mt-4">
                         <button type="submit" class="btn btn-primary me-2">Submit</button>
                         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="offcanvas">
@@ -101,6 +105,9 @@
                             <div class="mt-2">
                                 <small class="text-secondary">📅 {{ $portofolio->tanggal }}</small>
                             </div>
+                            <div class="mt-2">
+                                <small class="text-secondary">🛠 <strong>TechStack:</strong> <span class="text-dark">{{ $portofolio->techstack }}</span></small>
+                            </div>                            
                         </div>
                     </div>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="add-new-record-update-{{ $portofolio->id }}"
@@ -138,6 +145,11 @@
                                     <label class="form-label">Tanggal</label>
                                     <input type="date" name="tanggal" class="form-control"
                                         value="{{ $portofolio->tanggal }}" required />
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">TechStack</label>
+                                    <input type="text" name="techstack" class="form-control"
+                                        value="{{ $portofolio->techstack }}" required />
                                 </div>
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 <button type="button" class="btn btn-outline-secondary"

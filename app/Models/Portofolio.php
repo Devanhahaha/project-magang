@@ -12,5 +12,6 @@ class Portofolio extends Model
         'title',
         'description',
         'tanggal',
+        'techstack',
     ];
 }
