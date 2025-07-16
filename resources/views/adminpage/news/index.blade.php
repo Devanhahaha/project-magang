@@ -85,6 +85,9 @@
                             <div class="mt-2">
                                 <small class="text-secondary">📅 {{ $new->tanggal }}</small>
                             </div>
+                            <div class="mt-2">
+                                <small class="text-secondary">📅 {{ $new->created_at }}</small>
+                            </div>
                         </div>
                     </div>
                     <div class="offcanvas offcanvas-end" tabindex="-1" id="add-new-record-update-{{ $new->id }}"

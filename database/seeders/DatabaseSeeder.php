@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             ServicesSeeder::class,
             NewsSeeder::class,
             PortofolioSeeder::class,
+            ComponentSeeder::class,
         ]);
     }
 }

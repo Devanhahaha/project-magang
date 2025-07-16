@@ -21,24 +21,24 @@
                 <div class="card mb-6">
                     <!-- Account -->
                     <div class="card-body pt-4">
-                        <form id="formAccountSettings" action="{{ route('settings.update', $user->id) }}" method="POST">
+                        <form id="formAccountSettings" action="{{ route('settings.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="row">
                                 <div class="mb-4 col-md-6">
                                     <label for="name" class="form-label">Name</label>
                                     <input class="form-control" type="text" id="name" name="name"
-                                        value="{{ $user->name }}" autofocus />
+                                    value="{{ old('name', $user->name) }}" autofocus />
                                 </div>
                                 <div class="mb-4 col-md-6">
                                     <label for="email" class="form-label">E-mail</label>
                                     <input class="form-control" type="text" id="email" name="email"
-                                        value="{{ $user->email }}" placeholder="john.doe@example.com" />
+                                    value="{{ old('email', $user->email) }}" placeholder="john.doe@example.com" />
                                 </div>
                                 <div class="mb-4 col-md-6">
                                     <label for="contact" class="form-label">Contact</label>
                                     <input type="text" class="form-control" id="contact" name="contact"
-                                        value="{{ $user->contact }}" />
+                                    value="{{ old('contact', $user->contact) }}" />
                                 </div>
                                 <div class="mb-4 col-md-6">
                                     <label for="password" class="form-label">Current Password</label>
@@ -52,6 +52,16 @@
                                     <label for="confirm_password" class="form-label">Confirm Password</label>
                                     <input type="password" class="form-control" id="confirm_password"
                                         name="confirm_password">
+                                </div>
+                                <div class="mb-4 col-md-6">
+                                    <label for="logo_apk" class="form-label">Logo</label>
+                                    <input type="file" class="form-control" id="logo_apk"
+                                        name="logo_apk">
+                                </div>
+                                <div class="mb-4 col-md-6">
+                                    <label for="nama_apk" class="form-label">Nama Aplikasi</label>
+                                    <input type="text" class="form-control" id="nama_apk"
+                                        name="nama_apk" value="{{ old('nama_apk', $components->nama_apk) }}">
                                 </div>
                             </div>
                             <div class="mt-2">

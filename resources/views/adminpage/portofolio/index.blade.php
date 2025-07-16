@@ -106,6 +106,9 @@
                                 <small class="text-secondary">📅 {{ $portofolio->tanggal }}</small>
                             </div>
                             <div class="mt-2">
+                                <small class="text-secondary">📅 {{ $portofolio->created_at }}</small>
+                            </div>
+                            <div class="mt-2">
                                 <small class="text-secondary">🛠 <strong>TechStack:</strong> <span class="text-dark">{{ $portofolio->techstack }}</span></small>
                             </div>                            
                         </div>

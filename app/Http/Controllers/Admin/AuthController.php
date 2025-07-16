@@ -22,14 +22,18 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|exists:users,email',
             'password' => 'required',
+        ], [
+            'email.exists' => 'Email tidak ditemukan di sistem kami.',
+            'email.required' => 'Email wajib diisi.',
+            'password.required' => 'Password wajib diisi.'
         ]);
+        
 
         if ($validator->fails()) {
-            return back()->with([
-                'status' => 'error',
-                'message' => 'email dan password tidak valid!'
-            ])->withInput();
-        }
+            return back()
+                ->withErrors($validator)
+                ->withInput();
+        }        
 
         $user = User::where('email', $request->email)->first();
 
@@ -37,7 +41,13 @@ class AuthController extends Controller
             Auth::login($user, $request->filled('remember'));
             return redirect()->route('dashboard')->with('success', 'Login Successfully!');
         } else {
-            return redirect()->back()->withInput()->with('error', 'Invalid email or password!');
+            return redirect()->back()
+    ->with([
+        'status' => 'error',
+        'message' => 'Invalid email or password!'
+    ])
+    ->withInput();
+
         }
     }
 

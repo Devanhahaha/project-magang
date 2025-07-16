@@ -166,6 +166,16 @@
         });
     </script>
 @endif
+@if ($errors->any())
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Gagal!',
+            html: `{!! implode('<br>', $errors->all()) !!}`,
+            confirmButtonText: 'OK'
+        });
+    </script>
+@endif
 </body>
 
 </html>
